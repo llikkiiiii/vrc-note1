@@ -1,0 +1,236 @@
+/* docs/.vitepress/theme/custom.css */
+
+/* --- 1. サイト全体のカラーシステムとフォント設定 --- */
+:root {
+  /* ブランドカラーの定義 */
+  --vp-c-brand-1: #2e7d32;
+  --vp-c-brand-2: #43a047;
+  --vp-c-brand-3: #66bb6a;
+  --vp-c-brand-soft: rgba(46, 125, 50, 0.14);
+  
+  /* デフォルトテーマの青色系変数を緑で上書き */
+  --vp-c-indigo-1: var(--vp-c-brand-1);
+  --vp-c-indigo-2: var(--vp-c-brand-2);
+  --vp-c-indigo-soft: var(--vp-c-brand-soft);
+
+  /* ホーム画面のヒーロータイトル用グラデーション */
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(120deg, #1b5e20 0%, #2e7d32 25%, #43a047 50%, #8bc34a 75%, #d4e157 100%);
+
+  /* サイト全体の最大幅を拡張 */
+  --vp-layout-max-width: 1600px; 
+
+  /* フォントの設定：Noto Sans JP を最優先に指定 */
+  --vp-font-family-base: "Noto Sans JP", "Inter", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+}
+
+/* サイト全体にフォントを適用 */
+body {
+  font-family: var(--vp-font-family-base);
+}
+
+/* --- 2. 記事内の基本スタイル --- */
+
+/* メインコンテンツエリアの横幅を調整 */
+.VPDoc .container {
+  max-width: 100% !important;
+  margin: 0 !important;
+}
+
+.VPDoc .content {
+  max-width: 100% !important;
+  padding: 32px 48px !important;
+}
+
+/* 標準のリンクスタイル */
+.vp-doc a {
+  color: var(--vp-c-brand-1) !important;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 0.2s;
+}
+
+.vp-doc a:hover {
+  opacity: 0.7;
+}
+
+/* docs/.vitepress/theme/custom.css */
+
+/* --- 見出しのデザイン (h2) --- */
+.vp-doc h2 {
+  /* 上の線を完全に消去し、1行分（約1.5rem）の空きを確保 */
+  border-top: none !important;
+  margin-top: 3.5rem !important; /* 1.5rem(空き) + 2rem(余白) のイメージ */
+  
+  /* 既存の左線を消去 */
+  border-left: none !important;
+  padding-left: 0 !important;
+  
+  color: #2c3e50; /* 文字色は黒（濃いグレー） */
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.6rem; /* 下線と文字の距離を微調整 */
+  position: relative;
+  
+  /* 下線全体を太く（2px -> 3px）設定 */
+  border-bottom: 5px solid #eaecef; 
+}
+
+/* 下線の一部分だけを緑色にする設定 */
+.vp-doc h2::after {
+  content: "";
+  position: absolute;
+  bottom: -3px; /* 太くした border-bottom (3px) と位置を合わせる */
+  left: 0;
+  width: 150px;  /* 緑色の線の長さ */
+  height: 3px;  /* 緑色の線も太く設定 */
+  background-color: var(--vp-c-brand-1); /* サイト共通の緑色 */
+}
+
+.vp-doc h3 {
+  color: var(--vp-c-brand-2);
+  margin-top: 1.5em;
+}
+
+/* 表（Table）の横幅を最大化 */
+.vp-doc table {
+  width: 100%;
+  margin: 0;
+}
+
+/* カスタムブロック（tip/info）の枠線を緑に変更 */
+.custom-block.tip,
+.custom-block.info {
+  border-color: var(--vp-c-brand-1) !important;
+}
+
+/* ホーム画面のフィーチャーアイコンの背景色 */
+.vp-doc .features .feature .icon {
+  background-color: var(--vp-c-brand-soft) !important;
+  border-radius: 8px;
+}
+
+/* --- 3. カスタムブロック（WARNING）のデザイン変更 --- */
+
+/* コンテナ全体の基本設定 */
+.custom-block.warning {
+  position: relative;
+  margin-top: 2.5rem !important; 
+  padding: 1.5rem 1.5rem 1rem !important;
+  border: 2px solid #d49e00 !important;
+  background-color: #fffbef !important;
+  border-radius: 8px;
+  overflow: visible !important;
+}
+
+/* 既存のタイトルを非表示化 */
+.custom-block.warning .custom-block-title {
+  display: none !important;
+}
+
+/* 左上の飛び出しラベル（WARNING） */
+.custom-block.warning::before {
+  content: "\26A0  WARNING"; /* 白抜きの警告記号を指定 */
+  position: absolute;
+  top: -1.5rem;
+  left: -2px;
+  background-color: #d49e00;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 0.9rem;
+  padding: 4px 15px;
+  border-radius: 8px 8px 0 0;
+  box-shadow: 2px 0 0 #d49e00;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ブロック内テキストの調整 */
+.custom-block.warning p {
+  margin: 0;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* --- 4. コピー用コンポーネント（CopyUrl）のスタイル --- */
+.copy-url {
+  font-family: var(--vp-font-family-mono);
+  font-size: 0.9em;
+  color: var(--vp-c-brand-1);
+  background-color: var(--vp-c-bg-soft);
+  padding: 3px 6px;
+  border-radius: 4px;
+  cursor: copy;
+  border: 1px solid var(--vp-c-divider);
+}
+
+.copy-badge {
+  font-size: 0.75em;
+  font-weight: bold;
+  color: #ffffff !important;
+  background-color: #2e7d32 !important;
+  padding: 2px 8px;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+
+/* docs/.vitepress/theme/custom.css */
+
+/* --- 蛍光ペン風ハイライトの設定 --- */
+.vp-doc mark {
+  /* 背景を透明にし、下の方だけにグラデーション（黄色）を敷く */
+  background: linear-gradient(transparent 60%, rgba(255, 252, 0, 0.8) 60%);
+  color: inherit; /* 文字色は周囲に合わせる */
+  padding: 0 2px;
+  margin: 0 1px;
+}
+
+/* 暗い色のハイライト（緑系）も欲しい場合 */
+.vp-doc mark.green {
+  background: linear-gradient(transparent 60%, rgba(102, 187, 106, 0.4) 60%);
+}
+
+/* docs/.vitepress/theme/custom.css */
+
+/* チェックボックス付きリストの設定 */
+.check-list {
+  list-style: none !important; /* 黒い点を完全に消去 */
+  padding-left: 0 !important;
+  margin: 1.5rem 0 !important;
+}
+
+.check-list li {
+  position: relative;
+  padding-left: 2rem; /* チェックボックスのスペース */
+  margin-bottom: 1rem; /* 行間を広めに確保 */
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+}
+
+/* 四角い枠のデザイン（白抜き・黒枠） */
+.check-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  background-color: #ffffff; /* 白抜き */
+  border: 2px solid #333333; /* 黒い枠 */
+  border-radius: 3px; /* わずかに角を丸く */
+}
+
+/* 黒色のチェックマーク（L字の線） */
+.check-list li::after {
+  content: "";
+  position: absolute;
+  left: 5px; /* 位置を微調整 */
+  top: 45%;
+  width: 8px;
+  height: 4px;
+  border-left: 2px solid #333333; /* 黒色のチェック */
+  border-bottom: 2px solid #333333; /* 黒色のチェック */
+  transform: translateY(-50%) rotate(-45deg);
+}

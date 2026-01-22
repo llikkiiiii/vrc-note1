@@ -202,7 +202,7 @@ VCCやALCOMではなく、BOOTHからダウンロードしてインポートす�
 | **MA Shape Changer** | このComponentがあるObjectが **On** のとき、指定したObjectの **Blend Shapes**（シェイプキー）の値を変更する。衣装の着脱時に生じる干渉を防ぐのに役立つ。 |
 | **MA Mesh Cutter** | このComponentがあるObjectが **On** のとき、指定したObjectの **Mesh（ポリゴン単位）** の表示・非表示を切り替える。 |
 | **MA Visible Head Accessory** | 自分の髪の毛など、通常は見ることができない「Head追従オブジェクト」を自分視点で見えるように設定する。 |
-| **VRC Head Chop** | 頭以外に追従するオブジェクトを自分視点で見えないように設定する。 |
+| **VRC Head Chop** | Head以外に追従するオブジェクトを自分視点で見えないように設定する。 |
 
 
 

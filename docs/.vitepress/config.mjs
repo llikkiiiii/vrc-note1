@@ -1,6 +1,7 @@
 // docs/.vitepress/config.mjs
 export default {
   title: "VRChat備忘録",
+  base: '/vrc-note1/',
 
   // Gitのコミット履歴から最終更新日を取得する設定（全ページ共通）
   lastUpdated: true,

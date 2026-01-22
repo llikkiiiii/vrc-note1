@@ -1,12 +1,11 @@
 // docs/.vitepress/config.mjs
 export default {
   title: "VRChat備忘録",
+  // GitHub PagesのURL（llikkiiiii.github.io/vrc-note1/）に合わせるための設定
   base: '/vrc-note1/',
 
-  // Gitのコミット履歴から最終更新日を取得する設定（全ページ共通）
   lastUpdated: true,
   
-  // headセクションでフォント（400, 500, 700）を読み込む
   head: [
     ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
@@ -14,7 +13,6 @@ export default {
   ],
 
   themeConfig: {
-    // 最終更新日の表示テキストと形式をカスタマイズ
     lastUpdated: {
       text: '最終更新日',
       formatOptions: {
@@ -23,32 +21,32 @@ export default {
       }
     },
 
-    // ナビゲーションバーの設定
     nav: [
       { text: 'ホーム', link: '/' },
       { text: 'ツール', link: '/my-tools' }
     ],
 
-    // サイドバーの設定
     sidebar: [
       {
         text: 'アバター関連',
         items: [
           { text: 'アバターをアップロードする方法', link: '/avatar-upload' },
-          { text: 'Quest対応', link: '/editing' }
+          // editing.md がまだ無い場合はビルドエラーになるため、一旦既存のファイルか '#' にしておくのが安全です
+          { text: 'プロフィール(編集中)', link: '/editing' } 
         ]
       },
       {
         text: 'ツール・編集',
         items: [
-          { text: '便利な改変ツールの総まとめ', link: '/my-tools' }
+          { text: '便利な改変ツールの総まとめ', link: '/my-tools' },
+          { text: '各ツールの詳細', link: '/tool-details' }
         ]
       }
     ],
 
-    // 検索やSNSリンクなどを追加する場合はここに記述
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      // リンク先を自分のリポジトリに変更しておくと便利
+      { icon: 'github', link: 'https://github.com/llikkiiiii/vrc-note1' }
     ]
   }
 }

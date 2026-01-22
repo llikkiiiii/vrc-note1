@@ -182,7 +182,8 @@ VRChatが指定する公式バージョンのUnityを導入します。
 1. [Unityダウンロードページ](https://unity.com/ja/releases/editor/whats-new/2022.3.22f1)から **Manual installs > Other installs** の場所にある、<mark>**Unity 2022.3.22 (Download Assistant)**</mark> をダウンロードしてください。
 
 2. ダウンロードした **Unity Download Assistant** を開いてください。
-   <br>画面に従い、規約に同意してください。<br>**Components** の画面で以下の **3つのみ** を選択し、Continue をクリックしてください。
+   <br>画面に従い、規約に同意してください。<br>
+   **Components** の画面で以下の **3つのみ** を選択し、Continue をクリックしてください。
 
 <div class="check-list">
 

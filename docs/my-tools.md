@@ -214,7 +214,7 @@ VCCやALCOMではなく、BOOTHからダウンロードしてインポートす�
 | **AAO Remove Mesh in Box** | 箱で指定した範囲のポリゴンを削除する。 |
 | **AAO Remove Mesh in Mask** | マスクテクスチャで指定した範囲を削除する。MeshDeleterWithTexture の機能と同様。 |
 | **AAO Merge Skinned Mesh** | 複数のメッシュを1つに統合して描画負荷を下げる。※アニメーションでの個別ON/OFFはできなくなる。<br>**[勉強中]** |
-| **AAO Merge PhysBone** | 複数のPhysBoneコンポーネントを1つに統合します。<br>**[勉強中]**  |
+| **AAO Merge PhysBone** | 複数のPhysBoneコンポーネントを1つに統合する。<br>**[勉強中]**  |
 
 <br>
 
